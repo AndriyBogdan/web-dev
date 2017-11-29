@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Document</title>
+	
+	<link rel="stylesheet type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="jquery.mmenu.all.css">
+	<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+
+	<header class="header-top">
+		<nav class="nav-fixed-top">
+			<div class="nav-brand"><h2>Test WEBApp</h2></div>
+			<div class="nav-menu">
+				<ul class="nav-collapse">
+					<li class="active"><a href="#">Item1</a></li>
+					<li><a href="#">Item2</a></li>
+					<li class="droping-item" id="drop"><a href="#">Item3 <i class="fa fa-caret-down"></i></a>
+
+					<!-- PASTE HERE DIV -->
+
+					</li>
+					<li><a href="#">Item4</a></li>
+					<li><a href="#">Item5</a></li>
+				</ul>
+			</div>
+			<div class="nav-bars">
+				
+			</div>
+	</header>
+	
+	<div class="menu-container">
+
+		<div class="title-row">
+			<h1>Some BIG heading</h1>
+		</div>
+
+		<div class="item-1">
+			<ul>
+				<li class="inner-item-1"><a href="#">some item</a></li>
+				<li class="inner-item-2"><a href="#">some item</a></li>
+				<li class="inner-item-3"><a href="#">some item</a></li>
+			</ul>
+		</div>
+
+		<div class="item-2">
+			<ul>
+				<li class="inner-item-1"><a href="#">some item</a></li>
+				<li class="inner-item-2"><a href="#">some item</a></li>
+				<li class="inner-item-3"><a href="#">some item</a></li>
+			</ul>
+		</div>
+
+		<div class="item-3">
+			<ul>
+				<li class="inner-item-1"><a href="#">some item</a></li>
+				<li class="inner-item-2"><a href="#">some item</a></li>
+				<li class="inner-item-3"><a href="#">some item</a></li>
+			</ul>
+		</div>
+
+		<div class="item-4">
+			<ul>
+				<li class="inner-item-1"><a href="#">some item</a></li>
+				<li class="inner-item-2"><a href="#">some item</a></li>
+				<li class="inner-item-3"><a href="#">some item</a></li>
+			</ul>
+		</div>
+		
+	</div>
+
+	<main>
+		<section class="container" id="s-section-1">
+			<div class="row">
+			<div class="col-md">
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit ipsam temporibus, nostrum aliquam eligendi dolorum magnam consequuntur. Corrupti vitae, eum omnis dolorum dolores quisquam, et dignissimos quos odio. Cumque, reiciendis?</div>
+				<div>Libero ratione, illo perferendis quia blanditiis aliquid in fuga molestiae, natus accusamus necessitatibus nesciunt dolorum cupiditate? Suscipit voluptatibus quibusdam cum molestiae, et deserunt, rerum repudiandae sed, optio autem aliquid, nam.</div>
+			</div>
+			<div class="col-md">
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ab in autem, magnam saepe exercitationem facilis porro recusandae neque molestias similique. Vero aliquid, odio eos voluptate voluptatibus, commodi error culpa!</div>
+				<div>Sed quis ab molestiae commodi repellendus blanditiis, temporibus, sapiente saepe aliquam odio dicta excepturi est harum molestias nulla fugiat, velit atque ea illum? Repellendus tenetur quaerat, velit labore esse iste!</div>
+			</div>
+			<div class="col-md">
+				<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos est corporis vero, atque nam illum a ipsum temporibus adipisci, impedit eaque perferendis quisquam maxime eos rerum provident nostrum possimus eligendi.</div>
+				<div>Perspiciatis, consequatur. Quidem vero architecto consectetur beatae enim natus magnam obcaecati fuga, adipisci minus odio quae commodi voluptatem dicta provident recusandae harum ea, repudiandae repellendus ex a at illum! Dolore?</div>
+			</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+
+   
+	</footer>
+	
+	<script src="jquery-3.2.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+         $(document).ready(function() {
+            
+         	var getClickItem = $('header>nav').find('div.nav-menu').find('ul.nav-collapse').find('li#drop');
+
+         	var state = false;
+
+         	getClickItem.click(function(event) {
+         		//var state = $('.menu-container').css('display');
+
+         		if($('.menu-container').css('display') == 'none')
+         		{
+         			$('.menu-container').css('display', 'grid');
+         			//$('.menu-container').delay(3000);
+         			setTimeout(function(){
+         				if(!state)
+         				{
+         					$('.menu-container').trigger('mouseleave');
+         				}
+         			},3000);
+         			
+         		}
+         		else
+         		{
+         			$('.menu-container').css('display', 'none');
+         			state = false;
+         		}
+         	});
+
+			$('.menu-container').mouseenter(function(){
+         		$('.menu-container').css('display', 'grid');
+         		state = true;
+         	});
+
+         	$('.menu-container').mouseleave(function(){
+         		$('.menu-container').css('display', 'none');
+         	});
+
+         });
+    </script>
+</body>
+</html>
