@@ -1,0 +1,25 @@
+.button
+  color: #FFFFFF
+  font-family: 'Lato-light'
+  display: inline-block
+  border: none
+  background-color: $button-bckg-color
+  text-transform: uppercase
+  text-decoration: none
+  text-align: center
+  letter-spacing: 2px
+  font-weight: bold
+  font-size: 18px
+  padding: 13px 45px
+  border-radius: 2px
+  transition: background-color .2s ease
+  outline: none
+  border-bottom: 4px solid darken($button-bckg-color, 20%)
+  &:hover
+    color: $button-bckg-color
+    background-color: $button-active-bckg-color
+    border-bottom-color: darken(#ff0036, 20%)
+  &:active
+    background-color: #FFFFFF
+    color: $main-akcent-color
+    border-bottom-color: darken(#ffffff, 30%)
